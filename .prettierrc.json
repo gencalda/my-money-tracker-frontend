@@ -1,0 +1,18 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "trailingComma": "es5",
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^assets/(.*)$",
+    "^components/(.*)$",
+    "^config/(.*)$",
+    "^hooks/(.*)$",
+    "^pages/(.*)$",
+    "^reducers/(.*)$",
+    "^services/(.*)$",
+    "^shared/(.*)$",
+    "^theme/(.*)$",
+    "^[./]"
+  ]
+}
