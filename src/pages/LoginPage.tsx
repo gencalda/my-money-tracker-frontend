@@ -70,7 +70,7 @@ const LoginPage: React.FC = () => {
   ) : (
     <div className="flex flex-col justify-around h-full mx-4">
       <div>
-        <div className="text-center text-5xl mb-32 font-semibold text-color-no-primary-bg">
+        <div className="mt-4 text-center text-3xl mb-32 font-semibold text-color-no-primary-bg md:text-5xl">
           My money tracker
         </div>
         <LoginForm

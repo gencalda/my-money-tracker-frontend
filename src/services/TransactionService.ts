@@ -1,5 +1,6 @@
 import queryString from 'query-string';
 import { apiClient } from 'config/api';
+import { ApiRoutes } from 'shared/constants/apiRoutes';
 import { IResponse } from 'shared/types/commonTypes';
 import {
   ITransaction,
@@ -9,10 +10,10 @@ import {
 } from 'shared/types/transactionTypes';
 
 export const createTransaction = (transactionData: ITransactionCreatePayload) =>
-  apiClient.post('/api/transactions', transactionData);
+  apiClient.post(ApiRoutes.Transactions, transactionData);
 
 export const updateTransaction = (transactionData: ITransactionUpdatePayload) =>
-  apiClient.put('/api/transactions', transactionData);
+  apiClient.put(ApiRoutes.Transactions, transactionData);
 
 export const getAllTransactions = (queryParams: ITransactionSearchQuery) => {
   const queryParamsString = queryParams
@@ -20,7 +21,7 @@ export const getAllTransactions = (queryParams: ITransactionSearchQuery) => {
     : '';
 
   return apiClient.get<IResponse<ITransaction[]>>(
-    `/api/transactions${queryParamsString}`
+    `${ApiRoutes.Transactions}${queryParamsString}`
   );
 };
 
@@ -29,7 +30,7 @@ export const getTransaction = (
   transactionSourceId: string
 ) =>
   apiClient.get<IResponse<ITransaction>>(
-    `/api/transactions/${transactionId}?transactionSourceId=${transactionSourceId}`
+    `${ApiRoutes.Transactions}/${transactionId}?transactionSourceId=${transactionSourceId}`
   );
 
 export const deleteTransaction = (
@@ -37,5 +38,5 @@ export const deleteTransaction = (
   transactionSourceId: string
 ) =>
   apiClient.delete<IResponse<null>>(
-    `/api/transactions/${transactionId}?transactionSourceId=${transactionSourceId}`
+    `${ApiRoutes.Transactions}/${transactionId}?transactionSourceId=${transactionSourceId}`
   );

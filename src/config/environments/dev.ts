@@ -1,7 +1,7 @@
 import { IEnvironmentConfig, S3Folder } from 'shared/types/commonTypes';
 
 export const DEV_VARIABLES: IEnvironmentConfig = {
-  API_BASE_URL: 'https://ql6tre5y9e.execute-api.us-east-1.amazonaws.com',
+  API_BASE_URL: 'https://api.my-money-tracker.com',
   AWS_COGNITO: {
     USER_POOL_ID: 'us-east-1_LujdvhGDn',
     CLIENT_ID: '7ls9mo2hcahftb8ssr6dtre9kv',

@@ -1,10 +1,11 @@
 import { apiClient } from 'config/api';
+import { ApiRoutes } from 'shared/constants/apiRoutes';
 import { AttachmentType } from 'shared/types/commonTypes';
 
 export const uploadAttachments = (
   attachmentType: AttachmentType,
   formData: FormData
-) => apiClient.post(`/api/attachments/${attachmentType}`, formData);
+) => apiClient.post(`${ApiRoutes.Attachments}/${attachmentType}`, formData);
 
 export const getAttachment = (
   fileName: string,
@@ -13,6 +14,6 @@ export const getAttachment = (
   const fileNameQueryStringValue = encodeURIComponent(fileName || '');
 
   return apiClient(
-    `/api/attachments/${attachmentType}?fileName=${fileNameQueryStringValue}`
+    `${ApiRoutes.Attachments}/${attachmentType}?fileName=${fileNameQueryStringValue}`
   );
 };
