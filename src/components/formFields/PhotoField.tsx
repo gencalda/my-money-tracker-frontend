@@ -122,7 +122,7 @@ const PhotoField: React.FC<Props> = ({
     const validPhotos = newPhotos?.filter?.((newPhoto) => {
       const { fileSize } = newPhoto;
       const oneMB = 1048576;
-      const threeMB = oneMB * 3;
+      const threeMB = oneMB * 10;
       const isValid = fileSize < threeMB;
 
       if (!isValid) {
@@ -134,7 +134,7 @@ const PhotoField: React.FC<Props> = ({
     if (invalidFiles?.length > 0) {
       setErrorMessage(
         <FilenamesErrorDisplay
-          label="The ff. files has more than 3MB file size:"
+          label="The ff. files has more than 10MB file size:"
           invalidFilenames={invalidFiles?.map(({ fileName }) => fileName)}
         />
       );
